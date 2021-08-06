@@ -14,6 +14,7 @@ wiki_base_url = 'https://en.wikipedia.org/wiki/'
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
+options.add_argument('--lang=en')
 
 def form_google_question(question):
 	new_q = ""
@@ -144,10 +145,13 @@ search = audio.audio_to_text()
 if search:
 	print(search)
 	output = ""
-	for data in get_data(search):
+	all_data = get_data(search)
+	for data in all_data:
 		output+=data
 		if data=="Here are some links that might fit you the best:":
 			break
+	for i in range(1, len(all_data)):
+		print(all_data[i])
 		
 	# print(output)
 	audio.text_to_audio(output)
