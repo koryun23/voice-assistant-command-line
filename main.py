@@ -104,7 +104,7 @@ def google_search(question):
 		
 	else:
 		link_divs = driver.find_elements_by_class_name("yuRUbf")
-		links = ["Here are some links you might like:"]
+		links = ["Here are some links that might fit you the best:"]
 		if link_divs:
 			print("Here are some links that might fit you the best:")
 			for i in range(len(link_divs)):

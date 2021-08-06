@@ -5,7 +5,6 @@ import simpleaudio as sa
 import speech_recognition as sr
 from gtts import gTTS
 import os
-from pygame import mixer
 from io import BytesIO
 import winsound
 from pydub import AudioSegment
